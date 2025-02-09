@@ -8,6 +8,7 @@ const SearchPage = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
+  const apiKey = import.meta.env.VITE_OMDB_KEY;
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -16,7 +17,7 @@ const SearchPage = () => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `https://www.omdbapi.com/?apikey=d65f83fb&s=${searchTerm}`
+          `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`
         );
         const data = await response.json();
         setMovies(data.Search || []);

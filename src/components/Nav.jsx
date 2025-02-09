@@ -44,7 +44,7 @@ const Nav = () => {
 
         {/* Nav Links - Hidden on small screens unless menuOpen is true */}
         <ul className={`nav__links ${menuOpen ? "open" : ""}`}>
-          <li className="nav__link">
+          <li className="nav__link" onClick={() => setMenuOpen(!menuOpen)}>
             <Link to="/" style={{ color: "silver", textDecoration: "none" }}>
               Home
             </Link>

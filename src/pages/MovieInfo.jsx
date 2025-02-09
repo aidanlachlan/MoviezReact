@@ -8,12 +8,13 @@ const MovieInfo = () => {
   const { imdbID } = useParams();
   const [movieInfo, setMovieInfo] = useState(null);
   const [loading, setLoading] = useState(true);
+  const apiKey = import.meta.env.VITE_OMDB_KEY;
 
   async function fetchMovie(imdbID) {
     setLoading(true);
     try {
       const response = await fetch(
-        `https://www.omdbapi.com/?apikey=d65f83fb&i=${imdbID}`
+        `https://www.omdbapi.com/?apikey=${apiKey}&i=${imdbID}`
       );
       const data = await response.json();
       setMovieInfo(data);
