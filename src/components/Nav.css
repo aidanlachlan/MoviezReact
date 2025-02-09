@@ -1,0 +1,140 @@
+.nav__container {
+  background-image: linear-gradient(to bottom, rgb(65, 7, 7), black);
+  padding: 10px;
+  box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+figure {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  max-height: 60px;
+  width: auto;
+  border: 2px solid rgb(65, 7, 7);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  border-color: silver;
+  box-shadow: 0 0 15px 5px silver;
+}
+
+/* NAVIGATION LINKS */
+.nav__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 430px;
+  height: 48px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav__links li {
+  color: silver;
+  position: relative;
+}
+
+.nav__links button {
+  cursor: pointer;
+  padding: 15px 25px;
+  border: 2px solid rgb(65, 7, 7);
+  border-radius: 50px;
+  background-color: silver;
+  color: rgb(65, 7, 7);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.35s ease;
+}
+
+.burger-menu {
+  display: none;
+  font-size: 28px;
+  color: silver;
+  cursor: pointer;
+}
+
+/* HOVER EFFECTS */
+
+.logo:hover {
+  border-color: silver;
+  box-shadow: 0 0 15px 5px silver;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  background: silver;
+  transition: width 0.2s;
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+.contact__button:hover {
+  background-color: rgb(65, 7, 7);
+  color: silver;
+  border: 2px solid silver;
+}
+
+
+/* MEDIA */
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+    z-index: 1000;
+  }
+
+  .nav__links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    z-index: 999; 
+    background-color: rgb(65, 7, 7);
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    height: 200px;
+    box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.05);
+
+    .contact__button {
+      background-color: none;
+      padding: none;
+    }
+  }
+}
+
